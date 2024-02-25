@@ -3,17 +3,5 @@ INFO:apscheduler.scheduler:Added job "delete_repeat" to job store "default"
 INFO:apscheduler.scheduler:Scheduler started
 INFO:aiogram.dispatcher:Start polling
 INFO:aiogram.dispatcher:Run polling for bot @Viandniak_bot id=6731474877 - 'Testovii'
-INFO:aiogram.event:Update id=229798168 is handled. Duration 297 ms by bot id=6731474877
-INFO:aiogram.event:Update id=229798170 is handled. Duration 281 ms by bot id=6731474877
-INFO:aiogram.event:Update id=229798169 is handled. Duration 297 ms by bot id=6731474877
-INFO:aiogram.event:Update id=229798171 is handled. Duration 327 ms by bot id=6731474877
-INFO:aiogram.event:Update id=229798167 is handled. Duration 375 ms by bot id=6731474877
-INFO:apscheduler.executors.default:Running job "delete_repeat (trigger: interval[0:00:50], next run at: 2024-02-25 15:49:23 MSK)" (scheduled at 2024-02-25 15:48:33.107666+03:00)
-INFO:apscheduler.executors.default:Job "delete_repeat (trigger: interval[0:00:50], next run at: 2024-02-25 15:49:23 MSK)" executed successfully
-INFO:aiogram.event:Update id=229798172 is handled. Duration 375 ms by bot id=6731474877
-INFO:apscheduler.executors.default:Running job "delete_repeat (trigger: interval[0:00:50], next run at: 2024-02-25 15:50:13 MSK)" (scheduled at 2024-02-25 15:49:23.107666+03:00)
-INFO:apscheduler.executors.default:Job "delete_repeat (trigger: interval[0:00:50], next run at: 2024-02-25 15:50:13 MSK)" executed successfully
-INFO:apscheduler.executors.default:Running job "delete_repeat (trigger: interval[0:00:50], next run at: 2024-02-25 15:51:03 MSK)" (scheduled at 2024-02-25 15:50:13.107666+03:00)
-INFO:apscheduler.executors.default:Job "delete_repeat (trigger: interval[0:00:50], next run at: 2024-02-25 15:51:03 MSK)" executed successfully
 INFO:aiogram.dispatcher:Polling stopped
 INFO:aiogram.dispatcher:Polling stopped for bot @Viandniak_bot id=6731474877 - 'Testovii'

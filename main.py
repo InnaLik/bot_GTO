@@ -1,3 +1,5 @@
+import sys
+
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from secret_key import bot_gto
@@ -7,7 +9,7 @@ from aiogram.types import Message
 import asyncio
 import sqlite3
 import logging
-import aioschedule
+
 
 
 TOKEN = bot_gto
@@ -32,7 +34,6 @@ def delete_repeat():
     with sqlite3.connect('database.db') as con:
         con.execute('delete from repeat')
         con.commit()
-    print('repeat')
 
 
 async def main() -> None:
@@ -44,7 +45,9 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
+    # logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     logging.basicConfig(level=logging.INFO, filename='py_log.txt', filemode='w')
+
     asyncio.run(main())
 
 
