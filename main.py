@@ -4,11 +4,12 @@ from aiogram import Bot, Dispatcher, types
 import asyncio
 import sqlite3
 import logging
-from aiogram.types import FSInputFile, InputFile
+from aiogram.types import FSInputFile
 
 TOKEN = bot_gto
 dp = Dispatcher()
 bot = Bot(TOKEN)
+
 
 @dp.message()
 async def handler_photo(message: types.Message):
