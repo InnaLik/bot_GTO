@@ -1,3 +1,4 @@
+import os
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from secret_key import bot_gto
 from aiogram import Bot, Dispatcher, types
@@ -5,6 +6,7 @@ import asyncio
 import sqlite3
 import logging
 from aiogram.types import FSInputFile
+import random
 
 TOKEN = bot_gto
 dp = Dispatcher()
@@ -14,19 +16,32 @@ bot = Bot(TOKEN)
 @dp.message()
 async def handler_photo(message: types.Message):
     if message.photo:
-        with sqlite3.connect('database.db') as con:
-            repeat = 1
-            while repeat != 0:
-                d = con.execute(f'select phrase from phrase order by random() limit 1')
-                answer = d.fetchone()[0]
-                e = con.execute(f"Select count(*) from repeat where phrase = '{answer}'")
-                repeat = e.fetchone()[0]
-            con.execute(f"Insert into repeat(phrase) values ('{answer}')")
-            con.commit()
-        await message.answer(answer)
-        # все названия картинок в бд + такой же словарь без повторений + на выбор либо фото, либо текст
-        photo = FSInputFile(path=f'C:/Users/Инна/PycharmProjects/bot_GTO/image/2.png',  filename='2.png')
-        await bot.send_photo(chat_id=message.chat.id, photo=photo)
+        s = random.choices(['phrase', 'img'])
+        # отправляю либо фразу либо картинку
+        if s == ['phrase']:
+            with sqlite3.connect('database.db') as con:
+                repeat = 1
+                while repeat != 0:
+                    d = con.execute(f'select phrase from phrase order by random() limit 1')
+                    answer = d.fetchone()[0]
+                    e = con.execute(f"Select count(*) from repeat where phrase = '{answer}'")
+                    repeat = e.fetchone()[0]
+                con.execute(f"Insert into repeat(phrase) values ('{answer}')")
+                con.commit()
+            await message.answer(answer)
+        else:
+            # все названия картинок в бд + такой же словарь без повторений + на выбор либо фото, либо текст
+            with sqlite3.connect('database.db') as con:
+                repeat = 1
+                while repeat != 0:
+                    d = con.execute(f'select path from image order by random() limit 1')
+                    answer = d.fetchone()[0]
+                    e = con.execute(f"Select count(*) from repeat where phrase = '{answer}'")
+                    repeat = e.fetchone()[0]
+                con.execute(f"Insert into repeat(phrase) values ('{answer}')")
+                con.commit()
+            photo = FSInputFile(path=f'{os.getcwd()}/image/{answer}')
+            await bot.send_photo(chat_id=message.chat.id, photo=photo)
 
 
 def delete_repeat():

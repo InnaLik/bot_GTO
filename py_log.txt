@@ -3,6 +3,8 @@ INFO:apscheduler.scheduler:Added job "delete_repeat" to job store "default"
 INFO:apscheduler.scheduler:Scheduler started
 INFO:aiogram.dispatcher:Start polling
 INFO:aiogram.dispatcher:Run polling for bot @ali_inna_bot id=5444090627 - 'ali_inna_bot'
-INFO:aiogram.event:Update id=78733229 is handled. Duration 984 ms by bot id=5444090627
+INFO:aiogram.event:Update id=78733238 is handled. Duration 1281 ms by bot id=5444090627
+INFO:aiogram.event:Update id=78733239 is handled. Duration 186 ms by bot id=5444090627
+INFO:aiogram.event:Update id=78733240 is handled. Duration 266 ms by bot id=5444090627
 INFO:aiogram.dispatcher:Polling stopped
 INFO:aiogram.dispatcher:Polling stopped for bot @ali_inna_bot id=5444090627 - 'ali_inna_bot'
